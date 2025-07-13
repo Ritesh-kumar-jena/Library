@@ -1,12 +1,119 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 📚 My Library Frontend
 
-Currently, two official plugins are available:
+This is the **Frontend** for the **My Library App**, built with **React**, **Chakra UI**, **React Router**, and **Axios**.  
+It allows users to browse books, manage their reading list, and update their profile.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✅ User Signup / Login / Logout (JWT Auth)  
+✅ Browse all books (from MongoDB)  
+✅ Add books to "My Books" (Want to Read)  
+✅ Manage reading status and rating  
+✅ Profile view and edit  
+✅ Responsive Chakra UI design  
+✅ Dark mode toggle  
+✅ Protected routes
+
+---
+
+## 📂 Project Structure
+
+```
+/src
+ ├── components/
+ │   ├── Navbar.jsx
+ │   ├── BookCard.jsx
+ │   └── AllRoutes.jsx
+ ├── pages/
+ │   ├── HomePage.jsx
+ │   ├── MyBooksPage.jsx
+ │   ├── SignupPage.jsx
+ │   ├── LoginPage.jsx
+ │   ├── ProfilePage.jsx
+ │   └── NotFoundPage.jsx
+ ├── context/
+ │   └── AuthContextProvider.jsx
+ ├── services/
+ │   └── api.js
+ ├── App.jsx
+ ├── main.jsx
+```
+
+---
+
+## ⚙️ Installation
+
+1. **Clone the repo**
+   ```bash
+   git clone <https://github.com/Ritesh-kumar-jena/Library>
+   cd Frontend
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the app**
+   ```bash
+   npm run dev
+   ```
+
+
+---
+
+## 🔑 Environment
+
+- Uses `localStorage` to store JWT token.
+- Axios interceptor automatically adds the token to requests.
+- `api.js` is pre-configured with your backend base URL.
+
+---
+
+## 🗃️ API Endpoints Used
+
+- `POST /users/signIn` — Register user
+- `POST /users/login` — Login user
+- `GET /users/profile/:id` — Get profile data
+- `PATCH /users/edit/:id` — Edit profile
+- `GET /books` — Get all books
+- `GET /mybooks` — Get user’s books
+- `POST /mybooks/:bookId` — Add book to My Books
+- `PATCH /mybooks/:bookId/status` — Update reading status
+- `PATCH /mybooks/:bookId/rating` — Update rating
+- `GET /users/logout` — Logout user
+
+---
+
+## ✅ Notes
+
+- **AuthContextProvider** checks token validity on page load.
+- Protected routes ensure only logged-in users can manage books & profile.
+- My Books page lets users update status and rating easily.
+
+---
+
+## 🛠️ Tech Stack
+
+- **React 19**
+- **Chakra UI**
+- **React Router DOM**
+- **Axios**
+- **Framer Motion**
+- **JWT Decode**
+
+---
+
+## 🧑‍💻 Author
+
+- Developed by **Ritesh Kumar Jena**
+- Feel free to improve & contribute!
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
